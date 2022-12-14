@@ -23,13 +23,13 @@ fi
 
 mkdir $NEW_PROJECT_PATH 
 echo "Copying makefile from $MAKE_FILE_PATH"
-cp ${MAKE_FILE_PATH}makefile $NEW_PROJECT_PATH/
+cp ${MAKE_FILE_PATH}makefile.archetype ${NEW_PROJECT_PATH}/makefile
 echo "Copying main_archetype.go from $MAKE_FILE_PATH"
-cp ${MAKE_FILE_PATH}main_go_archetype ${NEW_PROJECT_PATH}/${NEW_PROJECT}.go
+cp ${MAKE_FILE_PATH}main_go.archetype ${NEW_PROJECT_PATH}/${NEW_PROJECT}.go
 
 echo "Making README.md"
+echo "#${NEW_PROJECT}.go" > ${NEW_PROJECT_PATH}/README.md
 cat <<'EOF' > ${NEW_PROJECT_PATH}/README.md
-#$NEW_PROJECT.go
 Simple go script with single source and mod file in root directory
 ##Getting started
 Install required tools with \`make wintools`
